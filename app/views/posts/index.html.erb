@@ -1,10 +1,10 @@
-<div class="my-5">
+<div class="">
   <p id="notice"><%= notice %></p>
 
-  <h1>Posts</h1>
+  <h2>My Blog</h2>
 
   <% @posts.each do |post| %>
-    <p><%= post.title %></td></p>
+    <p><%= post.title %></p>
     <p><%= post.body %></p>
           <!--<td><%= link_to 'Show', post %></td>
           <td><%= link_to 'Edit', edit_post_path(post) %></td>
@@ -13,5 +13,5 @@
 
   <br>
 
-  <%= link_to 'New Post', new_post_path %>
+  <%= link_to 'Create a New Post', new_post_path, class: 'btn btn-primary' %>
 </div>
