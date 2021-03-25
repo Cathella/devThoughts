@@ -1,15 +1,38 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body {
+  font-family: 'Nunito', sans-serif;
+  background-image: linear-gradient(to bottom, #fff5f6 , #fbfbfb);
+  font-weight: 600;
+  color: #2c2851;
+}
+
+h1,
+h2 {
+  font-family: 'PT Serif', serif;
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+
+h1 {
+  font-size: 4.2em;
+  line-height: 0.9;
+}
+
+h2 {
+font-size: 3em;
+}
+
+.logo {
+  font-family: 'Pacifico', cursive;
+  background-image: linear-gradient(to bottom right, #cf6fd8 , #f7ac8b);
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  position: relative;
+}
+
+.logo a {
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  color: #fff;
+}

@@ -10,6 +10,8 @@
     <%= favicon_link_tag asset_path('favicon.ico') %>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -17,6 +19,45 @@
   </head>
 
   <body>
+
+    <header>
+      <nav class="navbar navbar-expand-md navbar-light container">
+        <div class="logo">
+          <a href="index.html">NC</a>
+        </div>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav ml-auto">
+            <a href="https://cathella.github.io/" class="nav-item nav-link mr-4">Home</a>
+            <a href="https://cathella.github.io/projects.html" class="nav-item nav-link mr-4">Projects</a>
+            <a href="/" class="nav-item nav-link mr-4">Blog</a>
+            <a href="https://cathella.github.io/templates.html" class="nav-item nav-link mr-4">Templates</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container">
     <%= yield %>
+    </div>
+
+    <script
+		src="https://kit.fontawesome.com/7290f27402.js"
+		crossorigin="anonymous"></script>
+
+    <footer class="container pt-5 mb-5">
+      <nav class="d-flex align-items-center justify-content-between flex-wrap">
+        <div class="logo">
+          <a href="index.html">NC</a>
+        </div>
+        <div class="d-flex">
+          <a class="mr-4" href="https://github.com/Cathella"><i class="fab fa-github fa-lg text-muted"></i></a>
+          <a class="mr-4" href="https://twitter.com/cathella9"><i class="fab fa-twitter fa-lg text-muted"></i></a>
+          <a href="https://www.linkedin.com/in/nakitto-catherine2020/"><i class="fab fa-linkedin-in fa-lg text-muted"></i></a>
+        </div>
+      </nav>
+    </footer>
   </body>
 </html>
