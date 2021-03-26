@@ -1,29 +1,19 @@
-<p id="notice"><%= notice %></p>
+<div class="">
+  <p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
+  <h2 class="mb-5 text-center">My Blog</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <% @posts.each do |post| %>
+    <h3><%= link_to post.title, post, class: 'link-color', style: 'text-decoration: underline' %></h3>
+    <p class="text-muted mb-2"><%= post.body.truncate_words(70) %></p>
+    <div class="mb-5">
+      <%= link_to 'Read more', post, class: 'mr-4 text-purple' %>
+      <%= link_to 'Edit Post', edit_post_path(post), class: 'mr-4 text-purple' %>
+      <%= link_to 'Delete Post', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-purple' %>
+    </div>
+  <% end %>
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.body %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <br>
 
-<br>
-
-<%= link_to 'New Post', new_post_path %>
+  <%= link_to 'Create a New Post', new_post_path, class: 'btn btn-purple' %>
+</div>
