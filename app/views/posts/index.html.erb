@@ -1,11 +1,11 @@
 <div class="">
   <p id="notice"><%= notice %></p>
 
-  <h2 class="mb-5 text-center">My Blog</h2>
+  <h2 class="mb-5 text-center pb-4">My Dev-thoughts</h2>
 
   <% @posts.each do |post| %>
     <h3><%= link_to post.title, post, class: 'link-color', style: 'text-decoration: underline' %></h3>
-    <p class="text-muted mb-2"><%= post.body.truncate_words(70) %></p>
+    <p class="text-muted mb-2"><%= post.body.truncate_words(65) %></p>
     <div class="mb-5">
       <%= link_to 'Read more', post, class: 'mr-4 text-purple' %>
       <%= link_to 'Edit Post', edit_post_path(post), class: 'mr-4 text-purple' %>
