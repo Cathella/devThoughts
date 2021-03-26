@@ -21,6 +21,14 @@ h2 {
 font-size: 3em;
 }
 
+h3 {
+  font-family: 'PT Serif', serif;
+}
+
+.link-color {
+  color: #2c2851;
+}
+
 .logo {
   font-family: 'Pacifico', cursive;
   background-image: linear-gradient(to bottom right, #cf6fd8 , #f7ac8b);
@@ -35,4 +43,18 @@ font-size: 3em;
   right: 10px;
   top: 12px;
   color: #fff;
+}
+
+p {
+  line-height: 1.8em;
+}
+
+.text-purple {
+  color: #cf6fd8;
+}
+
+.btn-purple,
+.bg-purple {
+  color: white;
+  background: #cf6fd8;
 }
