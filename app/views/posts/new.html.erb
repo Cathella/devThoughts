@@ -1,11 +1,9 @@
-<h2>New Post</h2>
-
-<div class="row">
-  <div class="col-lg-8">
-    <%= render 'form', post: @post %>
-  </div>
+<div class="">
+<%= link_to '<i class="fas fa-arrow-left mr-2"></i>Back to Posts'.html_safe, posts_path, class: 'text-purple' %>
 </div>
 
-<div class="mt-4">
-  <%= link_to '<i class="fas fa-arrow-left mr-2"></i>Back to Posts'.html_safe, posts_path, class: "" %>
+<h2 class="text-center mb-5">Create a Post</h2>
+
+<div class="w-75 mx-auto">
+  <%= render 'form', post: @post %>
 </div>
