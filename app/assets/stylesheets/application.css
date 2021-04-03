@@ -1,6 +1,7 @@
 body {
   font-family: 'Nunito', sans-serif;
-  background-image: linear-gradient(to bottom, #fff5f6 , #fbfbfb);
+  /* background-image: linear-gradient(to bottom, #fff5f6 , #fbfbfb); */
+  background: #eeeeee;
   font-weight: 600;
   color: #2c2851;
 }
@@ -57,4 +58,11 @@ p {
 .bg-purple {
   color: white;
   background: #cf6fd8;
+}
+
+.input {
+  font-size: 20px;
+  border: none;
+  border-left: 1px dashed #cf6fd8;
+  height: 3em;
 }

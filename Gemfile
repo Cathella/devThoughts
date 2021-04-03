@@ -6,6 +6,7 @@ ruby '3.0.0'
 # Add custom gems
 # gem 'draftsman', github: 'jmfederico/draftsman'
 gem 'webpacker', '~> 5.2', '>= 5.2.1'
+gem 'devise', '~> 4.7', '>= 4.7.3'
 # end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

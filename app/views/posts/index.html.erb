@@ -8,12 +8,16 @@
     <p class="text-muted mb-2"><%= post.body.truncate_words(65) %></p>
     <div class="mb-5">
       <%= link_to 'Read more', post, class: 'mr-4 text-purple' %>
-      <%= link_to 'Edit Post', edit_post_path(post), class: 'mr-4 text-purple' %>
-      <%= link_to 'Delete Post', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-purple' %>
+      <% if author_signed_in? %>
+        <%= link_to 'Edit Post', edit_post_path(post), class: 'mr-4 text-purple' %>
+        <%= link_to 'Delete Post', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-purple' %>
+      <% end %>
     </div>
   <% end %>
 
-  <br>
-
-  <%= link_to 'Create a New Post', new_post_path, class: 'btn btn-purple rounded-0 px-5 py-3 shadow font-weight-bold', style: 'font-size: 1.2em' %>
+  <% if author_signed_in? %>
+    <div class="text-center">
+      <%= link_to 'Create a New Post', new_post_path, class: 'btn btn-purple rounded-0 px-5 py-3 shadow font-weight-bold', style: 'font-size: 1.2em' %>
+    </div>
+  <% end %>
 </div>
