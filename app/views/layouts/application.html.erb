@@ -34,6 +34,9 @@
             <a href="https://cathella.github.io/projects.html" class="nav-item nav-link mr-4">Projects</a>
             <a href="/" class="nav-item nav-link mr-4">Blog</a>
             <a href="https://cathella.github.io/templates.html" class="nav-item nav-link mr-4">Templates</a>
+            <% if author_signed_in? %>
+              <%= link_to 'Logout', destroy_author_session_path, method: :delete, class: 'nav-item nav-link' %>
+            <% end %>
           </div>
         </div>
       </nav>
