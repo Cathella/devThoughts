@@ -58,3 +58,10 @@ p {
   color: white;
   background: #cf6fd8;
 }
+
+.input {
+  font-size: 20px;
+  border: none;
+  border-left: 1px dashed #cf6fd8;
+  height: 3em;
+}
