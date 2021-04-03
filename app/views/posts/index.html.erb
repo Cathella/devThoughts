@@ -15,7 +15,9 @@
     </div>
   <% end %>
 
-  <div class="text-center">
-    <%= link_to 'Create a New Post', new_post_path, class: 'btn btn-purple rounded-0 px-5 py-3 shadow font-weight-bold', style: 'font-size: 1.2em' %>
-  </div>
+  <% if author_signed_in? %>
+    <div class="text-center">
+      <%= link_to 'Create a New Post', new_post_path, class: 'btn btn-purple rounded-0 px-5 py-3 shadow font-weight-bold', style: 'font-size: 1.2em' %>
+    </div>
+  <% end %>
 </div>
