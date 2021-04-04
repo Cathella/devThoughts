@@ -1,16 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<h2 class="border-bottom pb-3 mb-5">
+<div class="">
+<%= link_to '<i class="fas fa-arrow-left mr-2"></i>Back to Posts'.html_safe, posts_path, class: 'text-purple' %>
+</div>
+
+<h2 class="border-bottom pb-3 mb-4 mt-3">
   <%= @post.title %>
 </h2>
 
-<p class="text-muted">
+<div class="mb-4 text-muted">
   <%= @post.body %>
-</p>
+</div>
 
 <div>
 <% if author_signed_in? %>
   <%= link_to 'Edit Post', edit_post_path(@post), class: 'mr-4 text-purple' %>
 <% end %>
-<%= link_to 'Back to posts', posts_path, class: 'text-purple' %>
 </div>
