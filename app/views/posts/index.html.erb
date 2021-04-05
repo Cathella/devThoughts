@@ -10,6 +10,7 @@
     </div>
     <div class="mb-5">
       <%= link_to 'Read more', post, class: 'mr-4 text-purple' %>
+      <%= link_to 'Comments', {}, class: 'mr-4 text-purple' %>
       <% if author_signed_in? %>
         <%= link_to 'Edit Post', edit_post_path(post), class: 'mr-4 text-purple' %>
         <%= link_to 'Delete Post', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-purple' %>

@@ -17,3 +17,22 @@
   <%= link_to 'Edit Post', edit_post_path(@post), class: 'mr-4 text-purple' %>
 <% end %>
 </div>
+
+<div>
+<%= form_for @comments_form, url: :comments do |form| %>
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>
+
+<div class="">
+  <% @comments.each do |comment| %>
+    <p><%= comment.body %></p>
+  <% end %>
+</div>
