@@ -1,45 +1,47 @@
 <p id="notice"><%= notice %></p>
-
-<div class="">
-<%= link_to '<i class="fas fa-arrow-left mr-2"></i>Back to Posts'.html_safe, posts_path, class: 'text-purple' %>
-</div>
-
-<h2 class="border-bottom pb-3 mb-4 mt-3">
-  <%= @post.title %>
-</h2>
-
-<div class="mb-4 text-muted">
-  <%= @post.body %>
-</div>
-
-<div>
-<% if author_signed_in? %>
-  <%= link_to 'Edit Post', edit_post_path(@post), class: 'mr-4 text-purple' %>
-<% end %>
-</div>
-
-<div class="mt-4">
-<%= form_for([@post, @post.comments.build]) do |form| %>
-  <div class="row">
-    <div class="col-lg-8">
-      <div class="field">
-        <%= form.text_field :body, class: 'form-control input rounded-0' %>
-      </div>
+<div class="row">
+  <div class="col-lg-9">
+    <div class="">
+    <%= link_to '<i class="fas fa-arrow-left mr-2"></i>Back to Posts'.html_safe, posts_path, class: 'text-purple' %>
     </div>
-    <div class="col-lg-4">
-      <div class="actions">
-        <%= form.submit 'Add comment', class: 'btn btn-purple py-3 px-5 rounded-0' %>
-      </div>
+
+    <h2 class="border-bottom pb-3 mb-4 mt-3">
+      <%= @post.title %>
+    </h2>
+
+    <div class="mb-4 text-muted">
+      <%= @post.body %>
+    </div>
+
+    <div>
+    <% if author_signed_in? %>
+      <%= link_to 'Edit Post', edit_post_path(@post), class: 'mr-4 text-purple' %>
+    <% end %>
+    </div>
+
+    <div class="mt-4">
+      <%= form_for([@post, @post.comments.build]) do |form| %>
+        <div class="field mb-3">
+          <%= form.text_field :name, class: 'form-control', placeholder: 'Your name', style: 'height: 2.9em'%>
+        </div>
+        <div class="field mb-4">
+          <%= form.text_area :body, class: 'form-control', placeholder: 'Your comment', style: 'height: 5.5em'%>
+        </div>
+        <div class="actions">
+          <%= form.submit 'Add comment', class: 'btn btn-purple py-3 px-5 rounded-0' %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="mt-5">
+      <% @comments.each do |comment| %>
+          <div class="font-weight-bold" style="font-size: 1.2em"><%= comment.name %></div>
+          <small class="text-muted">Posted on <%= comment.created_at %></small>
+          <p class="border-bottom mt-2 pb-2 text-muted"><%= comment.body %></p>
+          <% if author_signed_in? %>
+            <%= link_to 'Delete comment', [comment.post, comment], method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' } %>
+          <% end %>
+      <% end %>
     </div>
   </div>
-<% end %>
-</div>
-
-<div class="mt-4">
-  <% @comments.each do |comment| %>
-    <div class="text-muted">
-      <%= comment.body %>
-      <%= link_to 'Delete comment', [comment.post, comment], method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' } %>
-    </div>
-  <% end %>
 </div>
