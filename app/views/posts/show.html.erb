@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
-<div class="row">
-  <div class="col-lg-9">
+<div class="row mb-5">
+  <div class="col-lg-9 mx-auto">
     <div class="">
     <%= link_to '<i class="fas fa-arrow-left mr-2"></i>Back to Posts'.html_safe, posts_path, class: 'text-purple' %>
     </div>
@@ -14,11 +14,12 @@
     </div>
 
     <div>
-    <% if author_signed_in? %>
-      <%= link_to 'Edit Post', edit_post_path(@post), class: 'mr-4 text-purple' %>
-    <% end %>
+      <% if author_signed_in? %>
+        <%= link_to 'Edit Post', edit_post_path(@post), class: 'mr-4 text-purple' %>
+      <% end %>
     </div>
 
+    <!--
     <div class="mt-4">
       <%= form_for([@post, @post.comments.build]) do |form| %>
         <div class="field mb-3">
@@ -43,5 +44,6 @@
           <% end %>
       <% end %>
     </div>
+    -->
   </div>
 </div>

@@ -1,26 +1,28 @@
 <div class="">
   <p id="notice"><%= notice %></p>
+  <div class="row">
+    <div class="col-lg-9 mx-auto mb-5">
+      <h2 class="mb-5 pb-4">My Dev-thoughts</h2>
 
-  <h2 class="mb-5 text-center pb-4">My Dev-thoughts</h2>
+      <% @posts.each do |post| %>
+        <h3><%= link_to post.title, post, class: 'link-color', style: 'text-decoration: underline' %></h3>
+        <div class="text-muted my-3">
+          <%= post.body.to_plain_text.truncate_words(65) %>
+        </div>
+        <div class="mb-5">
+          <%= link_to 'Read more', post, class: 'mr-4 text-purple' %>
+          <% if author_signed_in? %>
+            <%= link_to 'Edit Post', edit_post_path(post), class: 'mr-4 text-purple' %>
+            <%= link_to 'Delete Post', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-purple' %>
+          <% end %>
+        </div>
+      <% end %>
 
-  <% @posts.each do |post| %>
-    <h3><%= link_to post.title, post, class: 'link-color', style: 'text-decoration: underline' %></h3>
-    <div class="text-muted my-3">
-      <%= post.body.to_plain_text.truncate_words(65) %>
-    </div>
-    <div class="mb-5">
-      <%= link_to 'Read more', post, class: 'mr-4 text-purple' %>
-      <%= link_to 'Comments', {}, class: 'mr-4 text-purple' %>
       <% if author_signed_in? %>
-        <%= link_to 'Edit Post', edit_post_path(post), class: 'mr-4 text-purple' %>
-        <%= link_to 'Delete Post', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-purple' %>
+        <div class="">
+          <%= link_to 'Create a New Post', new_post_path, class: 'btn btn-purple rounded-0 px-5 py-3 shadow' %>
+        </div>
       <% end %>
     </div>
-  <% end %>
-
-  <% if author_signed_in? %>
-    <div class="text-center">
-      <%= link_to 'Create a New Post', new_post_path, class: 'btn btn-purple rounded-0 px-5 py-3 shadow font-weight-bold', style: 'font-size: 1.2em' %>
-    </div>
-  <% end %>
+  </div>
 </div>
