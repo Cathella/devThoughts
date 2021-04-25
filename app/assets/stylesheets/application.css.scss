@@ -1,16 +1,16 @@
 // = require actiontext
 
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   /* background-image: linear-gradient(to bottom, #fff5f6 , #fbfbfb); */
-  background: #eeeeee;
+  // background: #eeeeee;
   font-weight: 600;
   color: #2c2851;
 }
 
 h1,
 h2 {
-  font-family: 'PT Serif', serif;
+  font-family: "PT Serif", serif;
   font-weight: 900;
   letter-spacing: -2px;
 }
@@ -21,11 +21,11 @@ h1 {
 }
 
 h2 {
-font-size: 3em;
+  font-size: 3em;
 }
 
 h3 {
-  font-family: 'PT Serif', serif;
+  font-family: "PT Serif", serif;
 }
 
 .link-color {
@@ -33,8 +33,8 @@ h3 {
 }
 
 .logo {
-  font-family: 'Pacifico', cursive;
-  background-image: linear-gradient(to bottom right, #cf6fd8 , #f7ac8b);
+  font-family: "Pacifico", cursive;
+  background-image: linear-gradient(to bottom right, #cf6fd8, #f7ac8b);
   border-radius: 50%;
   height: 50px;
   width: 50px;
@@ -64,7 +64,7 @@ p {
 
 .input {
   font-size: 20px;
-  border: none;
-  border-left: 1px dashed #cf6fd8;
+  // border: none;
+  // border: 1px solid #cf6fd8;
   height: 3em;
 }
